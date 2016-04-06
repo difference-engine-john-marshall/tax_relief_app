@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @questions = Question.find(params[:id])
+    @questions = Question.all.find(params[:id])
   end 
 
   def update
