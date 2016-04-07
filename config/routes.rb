@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   patch '/questionsIndex' => 'questions#update'
   delete '/questionsIndex/:id' => 'questions#destroy'
 
+  namespace :api do
+    namespace :v1 do
+      get '/questions' => 'questions#index'
+    end
+  end
+
 end
