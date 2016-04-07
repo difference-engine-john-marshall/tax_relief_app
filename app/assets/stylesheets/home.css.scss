@@ -1,0 +1,51 @@
+.header {
+  padding-bottom: 120px;
+}
+
+.navbar-brand {
+  height: 100%;
+}
+
+.navbar-right li a {
+  line-height: 55px;
+  font: Helvetica;
+  font-size: 18px;
+}
+
+.navbar-right {
+  margin-right: 20px;
+}
+
+body {
+  background-color: #F3F3F4;
+}
+
+#large-button {
+  background-color: #CC0000;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  width: 80%;
+}
+
+#large-button button:hover {
+  background-color: #9A0000
+}
+
+.navbar-fixed-bottom {
+  background-color: #A4A4A4;
+}
+
+#footer-text {
+  font: Helvetica;
+  font-size: 18px;
+  color: white;
+} 
+
+#footer-text p {
+  margin-top: 12px;
+}
