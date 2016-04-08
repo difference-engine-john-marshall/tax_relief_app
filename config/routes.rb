@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
 
   get '/questionsIndex' => 'questions#index'
   get '/questionsIndex/new' => 'questions#new'
@@ -15,7 +14,4 @@ Rails.application.routes.draw do
     end
   end
 
-=======
-  get '/' => 'questions#home'
->>>>>>> 400ae3ec70064aef6049fcb0fe0af59136d53c52
 end
