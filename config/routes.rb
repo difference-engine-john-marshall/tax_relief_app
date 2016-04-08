@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/faq' => 'faq#index'
+
   get '/questionsIndex' => 'questions#index'
   get '/questionsIndex/new' => 'questions#new'
   post '/questionsIndex' => 'questions#create'
