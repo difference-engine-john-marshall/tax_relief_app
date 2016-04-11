@@ -1,15 +1,18 @@
-<h2>User - This will show the questionnaire</h2>
+<div ng-app="app">
+  {{ 1 + 1 }}
+</div>
 
-http://localhost:3000/api/v1/questions.json
+<div id="questionBlock"></div>
 
 <script>
 
 $.ajax({
-   url: "http://localhost:3000/api/v1/questions.json",
-   dataType: 'json',
-   success: function(results){
-       console.log(results);
-   }
+  url: "http://localhost:3000/api/v1/questions.json",
+  dataType: 'json',
+  success: function (data) { 
+   $('#questionBlock').append(data);
+   console.log(data);
+  }
 });
 
 </script>
