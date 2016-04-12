@@ -1,3 +1,6 @@
+//-----------------NAVBAR---------------
+//-----------------------------------------
+
 .header {
   padding-bottom: 120px;
 }
@@ -16,12 +19,20 @@
   margin-right: 20px;
 }
 
-body {
-  background-color: #F3F3F4;
+.mission-statement {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
+
+//------------LARGE BUTTON----------------
+//-------------------------------------------
+
 #large-button {
-  background-color: #CC0000;
+  background-color: #9A0000;
   font-size: 24px;
   color: white;
   text-align: center;
@@ -29,12 +40,86 @@ body {
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  width: 80%;
+  min-width: 80%;
 }
 
-#large-button button:hover {
-  background-color: #9A0000
+#large-button:hover {
+  background-color: #670000
 }
+//---------------BODY-----------------
+//---------------------------------------
+
+body {
+  background-color: #F3F3F4;
+  font: Helvetica;
+  padding-bottom: 60px;
+}
+
+#body-title {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#about {
+  padding-top: 30px;
+}
+
+#home-about-panel {
+  border-radius: 10px;
+}
+
+#home-about {
+  background-color: #9A0000;
+}
+
+#home-about-body {
+  font-size: 18px;
+}
+
+#home-about-title {
+  font: Helvetica;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+
+#home-internet-safety {
+  font: Helvetica;
+  text-align: center;
+  border-radius: 10px;
+  border-color: #9A0000;
+  border-width: 5px;
+}
+
+#home-internet-safety-text p {
+  font-size: 16px;
+}
+
+#home-internet-safety-text p strong {
+  color: #9A0000;
+}
+
+#internet-safety-title {
+  color: #9A0000;
+  font-size: 24px;
+}
+
+#small-button {
+  background-color: #9A0000;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#internet-safety-rows strong {
+  color: #9A0000;
+}
+
+
+
+//---------------FOOTER---------------------
+//---------------------------------------------
 
 .navbar-fixed-bottom {
   background-color: #A4A4A4;
