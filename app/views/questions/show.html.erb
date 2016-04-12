@@ -1,0 +1,15 @@
+<h2>User - This will show the questionnaire</h2>
+
+http://localhost:3000/api/v1/questions.json
+
+<script>
+
+$.ajax({
+   url: "http://localhost:3000/api/v1/questions.json",
+   dataType: 'json',
+   success: function(results){
+       console.log(results);
+   }
+});
+
+</script>
