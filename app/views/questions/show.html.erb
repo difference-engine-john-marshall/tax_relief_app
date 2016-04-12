@@ -1,15 +1,37 @@
-<h2>User - This will show the questionnaire</h2>
+<div ng-app="app">
+  
+  <div ng-controller="questionsCtrl" ng-init="setup()">
+    <div ng-repeat="question in questions">
+       <div ng-if="question_index == $index">
+           <p>{{question.text}}</p>
+       </div>
+    </div>
 
-http://localhost:3000/api/v1/questions.json
+    <hr>
+    <button ng-click="next()">Yes</button>
+    <button>No</button>
 
+
+
+  </div>
+ 
+</div>
+
+<div id="questionBlock"></div>
+
+
+
+
+<!-- 
 <script>
 
 $.ajax({
-   url: "http://localhost:3000/api/v1/questions.json",
-   dataType: 'json',
-   success: function(results){
-       console.log(results);
-   }
+  url: "http://localhost:3000/api/v1/questions.json",
+  dataType: 'json',
+  success: function (data) { 
+   $('#questionBlock').append(data);
+   console.log(data);
+  }
 });
 
-</script>
+</script> -->

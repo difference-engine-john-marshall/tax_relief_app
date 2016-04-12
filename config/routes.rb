@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
 
+
+  get '/questions_index' => 'questions#index'
+  get '/questions_index/new' => 'questions#new'
+  post '/questions_index' => 'questions#create'
+
   get '/faq' => 'faq#index'
 
-  get '/questionsIndex' => 'questions#index'
-  get '/questionsIndex/new' => 'questions#new'
-  post '/questionsIndex' => 'questions#create'
+ 
   get '/questions' => 'questions#show'
-  get '/questionsIndex/:id/edit' => 'questions#edit'
-  patch '/questionsIndex' => 'questions#update'
-  delete '/questionsIndex/:id' => 'questions#destroy'
+  get '/questions_index/:id/edit' => 'questions#edit'
+  patch '/questions_index' => 'questions#update'
+  delete '/questions_index/:id' => 'questions#destroy'
 
   namespace :api do
     namespace :v1 do
