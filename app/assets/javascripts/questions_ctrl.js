@@ -1,20 +1,19 @@
 (function() {
  "use strict";
 
- angular.module("app").controller("questionsCtrl", function($scope, $http){
+ angular.module("app").controller("questionsCtrl", function($scope, $http, $window){
    
     $scope.setup = function(){
         $http.get('/api/v1/questions.json').then(function(response){
             $scope.questions = response.data;
-            console.log($scope.questions);
         });
     };
 
     $scope.question_index = 0;
 
     $scope.checkYesResponse = function(response) {
-      if (response == "landing") { 
-        $scope.question_index = 0
+      if (response === "landing") { 
+        console.log("landing page text");
       }
       else {
         $scope.question_index = response - 1
@@ -22,14 +21,14 @@
     };
 
     $scope.checkNoResponse = function(response) {
-      if (response == "faq") { 
-        return "faq";
+      if (response === "faq") { 
+        $window.location.href = '/faq';
       }
-      else if (response !== "landing") {
-        return "landing";
+      else if (response === "landing") {
+        console.log("landing page text");
       }
       else {
-        return question.id;
+        $scope.question_index = response - 1
       }
     };
 
