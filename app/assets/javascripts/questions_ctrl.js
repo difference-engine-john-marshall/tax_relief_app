@@ -1,25 +1,38 @@
 (function() {
  "use strict";
 
- angular.module("app").controller("questionsCtrl", function($scope, $http){
+ angular.module("app").controller("questionsCtrl", function($scope, $http, $window){
    
-   $scope.setup = function(){
-       $http.get('/api/v1/questions.json').then(function(response){
-           $scope.questions = response.data;
-           console.log($scope.questions);
-       });
-   };
+    $scope.setup = function(){
+        $http.get('/api/v1/questions.json').then(function(response){
+            $scope.questions = response.data;
+        });
+    };
 
-   $scope.question_index = 0;
-    $scope.question = {};
+    $scope.question_index = 0;
 
-    $scope.next = function () {
-        if ($scope.question_index >= $scope.questions.length - 1) {
-            $scope.question_index = 0;
-        } else {
-            $scope.question_index++;
-        }
-        console.log($scope.questions.length + '/' + $scope.question_index);
+    $scope.checkYesResponse = function(response) {
+      if (response === "faq") { 
+        $window.location.href = '/faq';
+      }
+      else if (response === "success") {
+        console.log("landing page text");
+      }
+      else {
+        $scope.question_index = response - 1
+      }
+    };
+
+    $scope.checkNoResponse = function(response) {
+      if (response === "faq") { 
+        $window.location.href = '/faq';
+      }
+      else if (response === "success") {
+        console.log("landing page text");
+      }
+      else {
+        $scope.question_index = response - 1
+      }
     };
 
 

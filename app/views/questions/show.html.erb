@@ -1,37 +1,16 @@
 <div ng-app="app">
   
   <div ng-controller="questionsCtrl" ng-init="setup()">
-    <div ng-repeat="question in questions">
-       <div ng-if="question_index == $index">
-           <p>{{question.text}}</p>
+    <div ng-repeat="question in questions track by $index">
+       <div ng-show="question_index == $index">
+          <p>{{question.text}}</p>
+          <button ng-click="checkYesResponse(question.yes_response)">Yes</button>
+          <button ng-click="checkNoResponse(question.no_response)">No</button>
        </div>
     </div>
 
     <hr>
-    <button ng-click="next()">Yes</button>
-    <button>No</button>
-
-
 
   </div>
  
 </div>
-
-<div id="questionBlock"></div>
-
-
-
-
-<!-- 
-<script>
-
-$.ajax({
-  url: "http://localhost:3000/api/v1/questions.json",
-  dataType: 'json',
-  success: function (data) { 
-   $('#questionBlock').append(data);
-   console.log(data);
-  }
-});
-
-</script> -->
