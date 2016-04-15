@@ -46,6 +46,11 @@
 #large-button:hover {
   background-color: #670000
 }
+
+#large-button:active {
+  vertical-align: top;
+  padding: 8px 13px 6px;
+}
 //---------------BODY-----------------
 //---------------------------------------
 
@@ -115,7 +120,6 @@ body {
 #internet-safety-rows strong {
   color: #9A0000;
 }
-
 
 
 //---------------FOOTER---------------------
