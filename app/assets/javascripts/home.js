@@ -1,3 +1,4 @@
-$("button").mouseover(function(){
-  $("button").css("background-color", "#9A0000");
+$("#large-button").on("click", function() {
+  window.open("http://weather.com", "_newtab");
+  window.location.replace('http://google.com');
 });
