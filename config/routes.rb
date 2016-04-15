@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  get '/' => 'questions#home'
   get '/questions_index' => 'questions#index'
   get '/questions_index/new' => 'questions#new'
   post '/questions_index' => 'questions#create'
