@@ -12,7 +12,10 @@
     $scope.question_index = 0;
 
     $scope.checkYesResponse = function(response) {
-      if (response === "landing") { 
+      if (response === "faq") { 
+        $window.location.href = '/faq';
+      }
+      else if (response === "success") {
         console.log("landing page text");
       }
       else {
@@ -24,7 +27,7 @@
       if (response === "faq") { 
         $window.location.href = '/faq';
       }
-      else if (response === "landing") {
+      else if (response === "success") {
         console.log("landing page text");
       }
       else {
