@@ -1,0 +1,10 @@
+<h1>Create a new Admin</h1>
+
+<%= form_tag '/admins/create' do %>
+
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+
+  <%= submit_tag "Create Admin" %>
+
+<% end %>
