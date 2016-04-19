@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+  devise_for :admins
+  root 'questions#home'
+
   get '/' => 'questions#home'
   get '/questions_index' => 'questions#index'
   get '/questions_index/new' => 'questions#new'
