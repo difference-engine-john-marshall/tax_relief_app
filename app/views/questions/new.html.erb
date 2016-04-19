@@ -1,1 +1,27 @@
 <h2>Admin - This will show the form to create new questions</h2>
+
+<%= form_tag '/questions_index', method: :post do %>
+
+<div>
+  <%= label_tag :text %>
+  <%= text_area_tag :text %>
+</div>
+
+<div>
+  <%= label_tag :yes_response %>
+  <%= text_field_tag :yes_response, '',:id=> "question_field_tag" %>
+</div>
+
+<div>
+  <%= label_tag :no_response %>
+  <%= text_field_tag :no_response %>
+</div>
+
+<div>
+  <%= label_tag :prequalifier %>
+  <%= text_field_tag :prequalifier %>
+</div>
+  
+<%= submit_tag "Add Question" %>
+
+<% end %>
