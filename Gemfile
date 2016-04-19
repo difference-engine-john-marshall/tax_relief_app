@@ -39,7 +39,7 @@ gem 'devise', '~> 3.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'rspec-rails', '~> 3.1'
+  gem 'rspec-rails', '3.4.2'
   gem 'factory_girl_rails', '~> 4.6'
 end
 

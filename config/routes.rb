@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   devise_for :admins
-  root 'questions#index'
+  root 'questions#home'
 
   get '/' => 'questions#home'
   get '/questions_index' => 'questions#index'
