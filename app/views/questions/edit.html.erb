@@ -1,14 +1,15 @@
 <h2>Admin - This will edit/update questions</h2>
 
-<% @questions.each do |question| %>
+<%= form_tag '/questions_index', method: :update do %>
   <div>
+
   <% label_tag :text %>
-  <textarea rows="4" cols="50"> <%= text_area_tag :text, question.text %>
+  <textarea rows="6" cols="100"> <%= @questions.text %>
   </textarea>
 </div>
-  <div>Yes? <%= question.yes_response %></div>
-  <div>No? <%= question.no_response %></div>
-  <div>Prequalifier: <%= question.prequalifier %><div>
-  <div>Created at: <%= question.created_at %> Updated at: <%= question.updated_at %></div>
-  <br>
+  <div>Yes? <%= @questions.yes_response %></div>
+  <div>No? <%= @questions.no_response %></div>
+  <div>Prequalifier: <%= @questions.prequalifier %><div>
+  <div>This question was created at: <%= @questions.created_at %></div>
+  <div>This question was updated at: <%= @questions.updated_at %></div>
 <% end %>

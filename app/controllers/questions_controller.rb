@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_admin!
+  # before_action :authenticate_admin!
 
   def home
 
@@ -29,7 +29,7 @@ class QuestionsController < ApplicationController
     redirect_to '/questions_index'
 
     # authenicating
-    type, 
+    # type, 
   end
 
   def edit

@@ -1,10 +1,16 @@
 <h2>Admin view for all created questions in DB</h2>
 
 <% @questions.each do |question| %>
+
   <div>Question: <%= question.text %></div>
   <div>Yes? <%= question.yes_response %></div>
   <div>No? <%= question.no_response %></div>
   <div>Prequalifier: <%= question.prequalifier %><div>
-  <div>Created at: <%= question.created_at %> Updated at: <%= question.updated_at %></div>
+  <div>Created at: <%= question.created_at %></div>
+  <div>Updated at: <%= question.updated_at %></div>
+  <a href="/questions_index/<%= question.id %>/edit" class="btn btn-danger" role="button">Edit Question</a>
+  <br>
+  <br>
   <br>
 <% end %>
+
