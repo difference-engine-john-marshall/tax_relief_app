@@ -1,4 +1,6 @@
 <h2>Admin view for all created questions in DB</h2>
+<a href="/questions_index/new" class="btn btn-danger" role="button">Create a new question</a>
+
 
 <% @questions.each do |question| %>
 
@@ -9,8 +11,9 @@
   <div>Created at: <%= question.created_at %></div>
   <div>Updated at: <%= question.updated_at %></div>
   <a href="/questions_index/<%= question.id %>/edit" class="btn btn-danger" role="button">Edit Question</a>
-  <br>
-  <br>
+  <a href="/questions_index/<%= question.id %>/" class="btn btn-danger" role="button" data-method="delete">Delete Question</a>
   <br>
 <% end %>
+
+
 

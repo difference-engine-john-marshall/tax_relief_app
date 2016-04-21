@@ -4,7 +4,7 @@
 
 <div>
   <%= label_tag :text %>
-  <%= text_area_tag :text %>
+  <%= text_area_tag :text, "Question" %>
 </div>
 
 <div>
@@ -16,12 +16,16 @@
   <%= label_tag :no_response %>
   <%= text_field_tag :no_response %>
 </div>
-
-<div>
-  <%= label_tag :prequalifier %>
-  <%= text_field_tag :prequalifier %>
+HOW TO PASS PREQUALIFIER SELECTION?
+<div class="container">
+  <div class="dropdown">
+    <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">Select Prequalifier<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Prequalifier 1</a></li>
+      <li><a href="#">Prequalifier 2</a></li>
+    </ul>
+  </div>
 </div>
   
-<%= submit_tag "Add Question" %>
-
+<button class="btn btn-danger"><% submit_tag %>Add Question</button>
 <% end %>

@@ -7,9 +7,11 @@
   <textarea rows="6" cols="100"> <%= @questions.text %>
   </textarea>
 </div>
-  <div>Yes? <%= @questions.yes_response %></div>
-  <div>No? <%= @questions.no_response %></div>
+  <div>Yes response? <%= @questions.yes_response %></div>
+  <div>No response? <%= @questions.no_response %></div>
   <div>Prequalifier: <%= @questions.prequalifier %><div>
   <div>This question was created at: <%= @questions.created_at %></div>
   <div>This question was updated at: <%= @questions.updated_at %></div>
+
+  <button class="btn btn-danger" role=button <%= submit_tag %>Save Changes</button>
 <% end %>
