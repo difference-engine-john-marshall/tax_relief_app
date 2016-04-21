@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 # Specs in this file have access to a helper object that includes
-# the QuestionsHelper. For example:
+# the FaqHelper. For example:
 #
-# describe QuestionsHelper do
+# describe FaqHelper do
 #   describe "string concat" do
 #     it "concats two strings with spaces" do
 #       expect(helper.concat_strings("this","that")).to eq("this that")
 #     end
 #   end
 # end
-RSpec.describe QuestionsHelper, type: :helper do
+RSpec.describe FaqHelper, type: :helper do
 end

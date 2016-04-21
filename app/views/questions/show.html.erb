@@ -1,0 +1,16 @@
+<div ng-app="app">
+  
+  <div ng-controller="questionsCtrl" ng-init="setup()">
+    <div ng-repeat="question in questions track by $index">
+       <div ng-show="question_index == $index">
+          <p>{{question.text}}</p>
+          <button ng-click="checkYesResponse(question.yes_response)">Yes</button>
+          <button ng-click="checkNoResponse(question.no_response)">No</button>
+       </div>
+    </div>
+
+    <hr>
+
+  </div>
+ 
+</div>
