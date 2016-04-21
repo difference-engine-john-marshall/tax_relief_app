@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
 
   devise_for :admins
+  get '/admins/new' => 'admins#new'
+  post '/admins/create' => 'admins#create'
+
   root 'questions#home'
 
   get '/' => 'questions#home'
