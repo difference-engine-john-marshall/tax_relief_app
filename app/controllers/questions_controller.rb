@@ -34,6 +34,7 @@ class QuestionsController < ApplicationController
       end
 
 # how do we control that the new question fits in preceeds and proceeds the appropriate question?
+# verify yes_response is unique?
 
   end
 
