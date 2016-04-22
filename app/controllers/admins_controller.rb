@@ -13,11 +13,14 @@ class AdminsController < ApplicationController
 
     if @admin.save
       
+      email = params[:email]
+      AdminNewMailer.admin_new(email).deliver
+      flash[:success] = "Message sent"
+
       redirect_to root_path
+
     else
       render :new
-
-
     end
   end
 end
