@@ -30,7 +30,7 @@
 
 #question-text-field-tag {
   display: block;
-  width: 800px;
+  width: 100%;
   height: 200px;
   margin-left: auto;
   margin-right: auto;
@@ -67,4 +67,53 @@
   text-align: center;
   background-color: #9A0000;
   color: white;
+}
+
+#button-submit:hover {
+  background-color: #670000
+}
+
+#button-edit {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background-color: #9A0000;
+  color: white;
+}
+
+#button-edit:hover {
+  background-color: #670000
+}
+
+#button-delete {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background-color: #9A0000;
+  color: white;
+}
+
+#button-delete:hover {
+  background-color: #670000
+}
+
+#new-question-button {
+  background-color: #9A0000;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  max-width: 73%;
+}
+
+#new-question-button:hover {
+  background-color: #670000
+}
+
+#new-question-button:active {
+  vertical-align: top;
+  padding: 8px 13px 6px;
 }
