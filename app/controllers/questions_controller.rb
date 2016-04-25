@@ -40,7 +40,10 @@ class QuestionsController < ApplicationController
   end 
 
   def update
-    @question.update({text: params[:text], yes_response: params[:yes_response], no_response: params[:no_response], prequalifier: params[:prequalifier]})
+    @questions = Question.all.find(params[:id])
+    @questions.update({text: params[:text], yes_response: params[:yes_response], no_response: params[:no_response], prequalifier: params[:prequalifier], id: params[:id]})
+    flash[:success] = "Question Edited"
+    redirect_to '/questions_index'
   end
 
   def destroy

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
  
   get '/questions' => 'questions#show'
   get '/questions_index/:id/edit' => 'questions#edit'
-  patch '/questions_index' => 'questions#update'
+  patch '/questions_index/:id' => 'questions#update'
   delete '/questions_index/:id' => 'questions#destroy'
 
   namespace :api do
