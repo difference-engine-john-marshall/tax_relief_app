@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  # before_action :authenticate_admin!
 
   def home
 
@@ -20,7 +21,18 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @questions = Question.new({text: params[:text], qualifying_response: parmas[:qualifying_response], next_question_id: params[:next_question_id]})
+    @question = Question.new({text: params[:text], yes_response: params[:yes_response], no_response: params[:no_response], prequalifier: params[:prequalifier]})
+    session[:return_to] = request.referer
+      @question.save
+
+      if @question.save
+        flash[:success] = "New question created"
+        redirect_to '/questions_index'
+      else
+        flash[:warning] = "Question not saved"
+        redirect_to request.referer
+      end
+
   end
 
   def edit
@@ -28,12 +40,22 @@ class QuestionsController < ApplicationController
   end 
 
   def update
-    @questions = Question.update({text: params[:text], qualifying_response: parmas[:qualifying_response], next_question_id: params[:next_question_id]})
+    @questions = Question.all.find(params[:id])
+    if @questions.update({text: params[:text], yes_response: params[:yes_response], no_response: params[:no_response], prequalifier: params[:prequalifier], id: params[:id]})
+    
+      flash[:success] = "Question Edited"
+      redirect_to '/questions_index'
+    else
+      flash[:warning] = "Question not saved"
+      redirect_to request.referer
+    end
   end
 
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
+    flash[:success] = "Question deleted"
+    redirect_to '/questions_index'
   end 
 
 end
