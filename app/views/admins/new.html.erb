@@ -1,0 +1,25 @@
+<h1>Create a new Admin</h1>
+
+<div class="container">
+  <% if @admin.errors.any? %>
+   <div class="alert alert-warning alert-dismissible" role="alert" id="error_explanation">
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+     <p><b><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</b></p>
+
+     <ul>
+     <% @admin.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+     </ul>
+   </div>
+  <% end %>
+</div>
+
+<%= form_tag '/admins/create' do %>
+
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+
+  <%= submit_tag "Create Admin" %>
+
+<% end %>
