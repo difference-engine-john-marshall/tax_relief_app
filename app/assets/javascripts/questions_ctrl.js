@@ -16,6 +16,7 @@
         $window.location.href = '/faq';
       }
       else if (response === "success") {
+        $window.location.href = '/';
         console.log("landing page text");
       }
       else {
@@ -28,6 +29,7 @@
         $window.location.href = '/faq';
       }
       else if (response === "success") {
+        $window.location.href = '/';
         console.log("landing page text");
       }
       else {
