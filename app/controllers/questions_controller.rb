@@ -41,9 +41,14 @@ class QuestionsController < ApplicationController
 
   def update
     @questions = Question.all.find(params[:id])
-    @questions.update({text: params[:text], yes_response: params[:yes_response], no_response: params[:no_response], prequalifier: params[:prequalifier], id: params[:id]})
-    flash[:success] = "Question Edited"
-    redirect_to '/questions_index'
+    if @questions.update({text: params[:text], yes_response: params[:yes_response], no_response: params[:no_response], prequalifier: params[:prequalifier], id: params[:id]})
+    
+      flash[:success] = "Question Edited"
+      redirect_to '/questions_index'
+    else
+      flash[:warning] = "Question not saved"
+      redirect_to request.referer
+    end
   end
 
   def destroy
