@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  # before_action :authenticate_admin!
+  before_action :authenticate_admin!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def home
 
