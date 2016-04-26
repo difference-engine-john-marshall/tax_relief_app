@@ -1,1 +1,36 @@
 <h2>Admin - This will show the form to create new questions</h2>
+<div class="container-fluid">
+  <div class="row" id="new-title">
+    <h2>Create a new question</h2>
+  </div>
+</div>
+<%= form_tag '/questions_index', method: :post do %>
+<div class="container-fluid">
+  <div class="row" id="new-title">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="question-text">
+      <div class="panel panel-default" id="question-text-panel">
+        <div class="panel-heading" id="question-text-panel-heading">
+          <h3 class="panel-title">New Question Text</h3>
+        </div>
+        <div class="panel-body" id="question-text-body">
+            <% label_tag :text %>
+            <%= text_area_tag :text, '',:id=> "question-text-field-tag"  %>
+        </div>
+        <div class="question-response-field">
+          <%= label_tag :yes_response %>
+          <%= text_field_tag :yes_response, '',:id=> "yes-question-field-tag" %> &nbsp;
+          <%= label_tag :no_response %>
+          <%= text_field_tag :no_response, '',:id=> "no-question-field-tag" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="button-submit">
+      <button type="submit" class="btn btn-default btn-lg" id="button-submit"><% submit_tag %>Add new quesiton</button>
+    </div>
+  </div>
+</div>
+
+<% end %>
