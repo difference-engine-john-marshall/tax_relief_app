@@ -16,6 +16,19 @@ RSpec.describe QuestionsController, type: :controller do
         post :create, {text: "blah blah", no_response: "1"}
       }.to change(Question, :count).by(1)
     end
-
   end
-end
+
+
+
+  context "valid attributes" do
+    it "locates the question" do
+      question = create(:question, text: "blah blah", no_response: "9")
+
+      patch :update, id: question, question: attributes_for(:question)
+      expect(assigns(:question)).to eq(question)
+    end
+  end
+  end
+
+
+  
