@@ -1,7 +1,8 @@
 (function() {
  "use strict";
 
- angular.module("app").controller("questionsCtrl", function($scope, $http, $window){
+ // angular.module("app").controller("questionsCtrl", function($scope, $http, $window){
+  angular.module("app").controller('questionsCtrl', ['$scope', '$http', '$window', function($scope, $http, $window){
    
     $scope.setup = function(){
         $http.get('/api/v1/questions.json').then(function(response){
@@ -29,6 +30,7 @@
         $window.location.href = '/faq';
       }
       else if (response === "success") {
+
         $window.location.href = '/questions/form';
         console.log("landing page text");
       }
@@ -41,6 +43,6 @@
 
    window.scope = $scope;
 
- });
+ }]);
 
 }());
