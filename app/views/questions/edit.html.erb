@@ -3,7 +3,7 @@
   <div class="row" id="new-title">
   </div>
 </div>
-<%= form_tag "/questions_index/#{@questions.id}", method: :patch do %>
+<%= form_tag "/questions_index/#{@question.id}", method: :patch do %>
 <div class="container-fluid">
   <div class="row" id="new-title">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="question-text">
@@ -13,13 +13,13 @@
         </div>
         <div class="panel-body" id="question-text-body">
             <% label_tag :text %>
-            <%= text_area_tag :text, @questions.text,:id=> "question-text-field-tag"  %>
+            <%= text_area_tag :text, @question.text,:id=> "question-text-field-tag"  %>
         </div>
         <div class="question-response-field">
           <%= label_tag :yes_response %>
-          <%= text_field_tag :yes_response, @questions.yes_response,:id=> "yes-question-field-tag" %> &nbsp;
+          <%= text_field_tag :yes_response, @question.yes_response,:id=> "yes-question-field-tag" %> &nbsp;
           <%= label_tag :no_response %>
-          <%= text_field_tag :no_response, @questions.no_response,:id=> "no-question-field-tag" %>
+          <%= text_field_tag :no_response, @question.no_response,:id=> "no-question-field-tag" %>
         </div>
       </div>
     </div>
