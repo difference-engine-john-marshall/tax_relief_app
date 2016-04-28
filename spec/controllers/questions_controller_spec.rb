@@ -13,9 +13,20 @@ RSpec.describe QuestionsController, type: :controller do
   describe "create" do
     it 'should create a new question' do
       expect{
-        post :create, {text: "blah blah", no_response: "1"}
+        post :create, FactoryGirl.attributes_for(:question)
       }.to change(Question, :count).by(1)
     end
-
   end
+
+  describe "update" do
+    it "updates the question" do
+      question = FactoryGirl.create(:question)
+
+      patch :update, FactoryGirl.attributes_for(:question, text: "updated text")
+
+      question = Question.find_by(id: 1)
+      expect(question.text).to eq("updated text")
+    end
+  end
+
 end
