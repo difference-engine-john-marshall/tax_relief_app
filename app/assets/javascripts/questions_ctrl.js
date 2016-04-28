@@ -16,9 +16,11 @@
       if (response === "faq") { 
         $window.location.href = '/faq';
       }
-      else if (response === "success") {
-        $window.location.href = '/questions/form';
-        console.log("landing page text");
+      else if (response === "success1") {
+        $window.location.href = '/questions/classic';
+      }
+      else if (response === "success2") {
+        $window.location.href = '/questions/equitable';
       }
       else {
         $scope.question_index = response - 1
@@ -29,17 +31,17 @@
       if (response === "faq") { 
         $window.location.href = '/faq';
       }
-      else if (response === "success") {
-
-        $window.location.href = '/questions/form';
-        console.log("landing page text");
+      else if (response === "success1") {
+        $window.location.href = '/questions/classic';
       }
+      else if (response === "success2") {
+        $window.location.href = '/questions/equitable';
+      }
+
       else {
         $scope.question_index = response - 1
       }
     };
-
-
 
    window.scope = $scope;
 

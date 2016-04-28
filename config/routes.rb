@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
   get '/faq' => 'faq#index'
 
-  get '/questions/form' => 'questions#form'
+  get '/questions/classic' => 'questions#classic'
+  get '/questions/equitable' => 'questions#equitable'
   get '/questions' => 'questions#show'
   get '/questions_index/:id/edit' => 'questions#edit'
   patch '/questions_index/:id' => 'questions#update'

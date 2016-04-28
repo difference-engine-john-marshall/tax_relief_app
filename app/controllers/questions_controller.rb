@@ -58,7 +58,10 @@ class QuestionsController < ApplicationController
     redirect_to '/questions_index'
   end 
 
-  def form
+  def classic
+  end
+
+  def equitable
   end
 
 end
