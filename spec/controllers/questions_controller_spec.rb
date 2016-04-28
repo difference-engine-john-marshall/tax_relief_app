@@ -13,22 +13,8 @@ RSpec.describe QuestionsController, type: :controller do
   describe "create" do
     it 'should create a new question' do
       expect{
-        post :create, {text: "blah blah", no_response: "1"}
+        post :create, FactoryGirl.attributes_for(:question)
       }.to change(Question, :count).by(1)
     end
   end
 
-
-
-  context "valid attributes" do
-    it "locates the question" do
-      question = create(:question, text: "blah blah", no_response: "9")
-
-      patch :update, id: question, question: attributes_for(:question)
-      expect(assigns(:question)).to eq(question)
-    end
-  end
-  end
-
-
-  
