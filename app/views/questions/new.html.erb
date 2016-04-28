@@ -13,13 +13,13 @@
         </div>
         <div class="panel-body" id="question-text-body">
             <% label_tag :text %>
-            <%= text_area_tag :text, '',:id=> "question-text-field-tag"  %>
+            <%= text_area_tag :text, @question.text, :id=> "question-text-field-tag"  %>
         </div>
         <div class="question-response-field">
           <%= label_tag :yes_response %>
-          <%= text_field_tag :yes_response, '',:id=> "yes-question-field-tag" %> &nbsp;
+          <%= text_field_tag :yes_response, @question.yes_response , id: "yes-question-field-tag" %> &nbsp;
           <%= label_tag :no_response %>
-          <%= text_field_tag :no_response, '',:id=> "no-question-field-tag" %>
+          <%= text_field_tag :no_response, @question.no_response , id: "no-question-field-tag" %>
         </div>
       </div>
     </div>
