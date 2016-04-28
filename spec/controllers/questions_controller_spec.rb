@@ -18,3 +18,33 @@ RSpec.describe QuestionsController, type: :controller do
     end
   end
 
+  describe "update" do
+    it "updates the question" do
+      question = FactoryGirl.create(:question)
+
+      patch :update, FactoryGirl.attributes_for(:question, text: "updated text")
+
+      question = Question.find_by(id: 1)
+      expect(question.text).to eq("updated text")
+    end
+
+    it "does not update the question" do
+      question = FactoryGirl.create(:question)
+
+      patch :update, FactoryGirl.attributes_for(:question, text: nil)
+
+      question = Question.find_by(id: 1)
+      expect(question.yes_response).to eq("2")
+    end
+  end
+
+  describe "delete" do
+    it 'should delete a question' do
+      question = FactoryGirl.create(:question)
+      expect{
+        delete :destroy, FactoryGirl.attributes_for(:question, id: 1)
+      }.to change(Question, :count).by(-1)
+    end
+  end
+
+end
