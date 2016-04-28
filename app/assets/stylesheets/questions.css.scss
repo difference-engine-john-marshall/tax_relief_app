@@ -3,13 +3,14 @@
   padding-bottom: 40px;
 }
 
-// #question-text {
-//   display: block;
-//   margin-left: auto;
-//   margin-right: auto;
-//   width: 250px;
-//   height: 200px;
-// }
+#question-text {
+  padding-top: 40px;
+  // display: block;
+  // margin-left: auto;
+  // margin-right: auto;
+  // width: 250px;
+  // height: 200px;
+}
 
 #question-text-panel-heading {
   background-color: #9A0000; 
@@ -97,7 +98,11 @@
   background-color: #670000
 }
 
-#new-question-button {
+#index-button-title {
+  padding-top: 40px;
+}
+
+#index-button {
   background-color: #9A0000;
   font-size: 24px;
   color: white;

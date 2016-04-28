@@ -19,8 +19,9 @@
 
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/">Home</a></li>
-          <li><a href="/questions">Tax Relief Qualification</a></li>        
-         </ul>
+          <li><a href="/questions">Tax Relief Qualification</a></li>
+          <li><%= link_to "Sign Out", "/admins/sign_out", method: :delete if admin_signed_in? %></li>
+        </ul>
       </div>
     </nav>
   </div>
@@ -49,9 +50,6 @@
       <%= message %>
     </div>
   <% end %>
-  
-
-  
 
 <%= yield %>
 
