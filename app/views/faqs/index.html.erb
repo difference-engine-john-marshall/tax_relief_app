@@ -14,6 +14,13 @@
         <div class="panel-body">
           <%= q.answer_text %>
         </div>
+
+        <div class="ned-links">
+          <% if admin_signed_in? %>
+            <%= link_to "New", "/faq/new" %>
+            <%= link_to "Edit", "/faq/#{q.id}/edit" %>
+          <% end %>
+        </div>
     </div>
   </div>
 

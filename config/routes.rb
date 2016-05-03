@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post '/questions_index' => 'questions#create'
 
   get '/faq' => 'faqs#index', as: :faqs
+  get '/faq/new' => 'faqs#new'
+  post '/faq' => 'faqs#create'
   get '/faq/:id/edit' => 'faqs#edit'
   patch '/faq/:id' => 'faqs#update'
 
