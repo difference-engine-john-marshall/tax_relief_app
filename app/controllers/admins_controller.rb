@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+  before_action :authenticate_admin!
   
   def new
     @admin = Admin.new
