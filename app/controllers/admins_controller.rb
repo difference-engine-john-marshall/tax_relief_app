@@ -11,16 +11,17 @@ class AdminsController < ApplicationController
       password: "defaulty",
       password_confirmation: "defaulty"  
     )
+      Rails.logger.info "TEST"
 
     if @admin.save
-      
       email = params[:email]
-      AdminNewMailer.admin_new(email).deliver
+      AdminNewMailer.admin_new(email).deliver_now
       flash[:success] = "Message sent"
 
       redirect_to root_path
 
     else
+      Rails.logger.info "TEST 2"
       render :new
     end
   end
