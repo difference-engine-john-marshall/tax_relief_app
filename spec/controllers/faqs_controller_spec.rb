@@ -20,13 +20,13 @@ RSpec.describe FaqsController, type: :controller do
       expect(faq.question_text).to eq("updated text")
     end
 
-    xit "does not update the question" do
-      question = FactoryGirl.create(:question)
+    it "does not update the faq" do
 
-      patch :update, FactoryGirl.attributes_for(:question, text: nil)
+      faq = FactoryGirl.create(:faq)
+      patch :update, FactoryGirl.attributes_for(:faq, question_text: nil)
+      faq = Faq.find_by(id: 1)
+      expect(faq.question_text).not_to eq("updated text")
 
-      question = Question.find_by(id: 1)
-      expect(question.yes_response).to eq("2")
     end
   end
 
