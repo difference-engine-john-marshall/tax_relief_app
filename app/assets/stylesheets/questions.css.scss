@@ -122,3 +122,12 @@
   vertical-align: top;
   padding: 8px 13px 6px;
 }
+
+.ta-editor {
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+    margin:20px 0;
+}

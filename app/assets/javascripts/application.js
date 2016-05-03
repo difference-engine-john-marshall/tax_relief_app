@@ -14,5 +14,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require angular
+//= require tinymce
 //= require app
 //= require_tree .

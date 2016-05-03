@@ -13,7 +13,8 @@
         </div>
         <div class="panel-body" id="question-text-body">
             <% label_tag :text %>
-            <%= text_area_tag :text, @question.text,:id=> "question-text-field-tag"  %>
+            <%= tinymce %>
+            <%= text_area_tag :text, @question.text, :class => "tinymce", id: "question-text-field-tag" %>
         </div>
         <div class="question-response-field">
           <%= label_tag :yes_response %>
