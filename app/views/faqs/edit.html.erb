@@ -1,14 +1,6 @@
 <%= form_tag "/faq/#{@faq.id}", method: :patch do %>  
 
-  <div>
-    <%= label_tag :question_text %>
-    <%= text_area_tag :question_text, @faq.question_text, id: "faq-question-text" %>
-  </div>
-
-  <div>
-    <%= label_tag :answer_text %>
-    <%= text_area_tag :answer_text, @faq.answer_text, id: "faq-answer-text" %>
-  </div>
+  <%= render "faq_form" %>
 
   <%= submit_tag "Save Changes" %>
 
