@@ -1,6 +1,6 @@
 <div ng-app="app">
-  
-  <div ng-controller="questionsCtrl" ng-init="setup()">
+  <br>
+  <div ng-controller="questionsCtrl" ng-init="setup()" class="container">
     <div ng-repeat="question in questions track by $index">
        <div ng-show="question_index == $index">
           <p ng-bind-html="question.text">{{question.text}}</p>
