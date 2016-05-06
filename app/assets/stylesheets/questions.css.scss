@@ -103,26 +103,16 @@
   padding-top: 40px;
 }
 
-#index-button {
-  background-color: #9A0000;
+.index-button {
+  // background-color: #9A0000;
   font-size: 24px;
-  color: white;
+  // color: white;
   text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  max-width: 73%;
-}
-
-.admin-nav-button {
-  font-size: 24px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
-  width: 49.8%;
-  padding-left: 0;
-  padding-right: 0;
+  max-width: 100%;
 }
 
 #navbar-panel {
