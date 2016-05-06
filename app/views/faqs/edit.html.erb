@@ -1,0 +1,10 @@
+<%= form_tag "/faq/#{@faq.id}", method: :patch do %>  
+
+  <%= render "faq_form" %>
+
+  <%= submit_tag "Save Changes" %>
+
+<% end %>
+
+
+

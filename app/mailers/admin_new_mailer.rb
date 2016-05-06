@@ -4,6 +4,6 @@ class AdminNewMailer < ApplicationMailer
    def admin_new(email)
      @email = email
 
-     mail(to: @email, from: ENV['EMAIL_USERNAME'], subject: 'JML Tax Relief New Account Setup')
+     mail(to: @email, from: "jmljmltaxrelief@gmail.com", subject: 'JML Tax Relief New Account Setup')
    end
 end
