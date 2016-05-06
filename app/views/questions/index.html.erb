@@ -1,23 +1,12 @@
 <div class="container-fluid">
-  <div class="row" id="index-button-title">
-    <a href="/questions_index/new" class="btn btn-default" role="button" id="index-button">Create a new question</a>
+  <div id="navbar-panel">
+    <a href="/questions_index/new" class="btn btn-default index-button" role="button">Create Question</a>
+    <a href="/faq/new" class="btn btn-default index-button" role="button">Create FAQ</a>
+    <a href="/admins/new" class="btn btn-default index-button" role="button">Create Admin</a>
   </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row" id="index-button-title">
-    <a href="/admins/new" class="btn btn-default" role="button" id="index-button">Create a new admin</a>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row" id="index-button-title">
-    <a href="/faq/new" class="btn btn-default" role="button" id="index-button">Create a new FAQ</a>
-  </div>
-</div>
 
 <% @questions.each do |question| %>
-<div class="container-fluid">
+
   <div class="row" id="new-title">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="question-text">
       <div class="panel panel-default" id="question-text-panel">
@@ -26,7 +15,7 @@
         </div>
         <div class="panel-body" id="question-text-body">
             
-            <%= question.text %>
+            <%= raw question.text %>
         </div>
         <div class="question-response-field">
           <%= label_tag :yes_response %>:
@@ -35,14 +24,10 @@
           <%= question.no_response %>
         </div>
         <a href="/questions_index/<%= question.id %>/edit" class="btn btn-default" id="button-edit" role="button">Edit Question</a>
-  <a href="/questions_index/<%= question.id %>/" class="btn btn-default" role="button" id="button-delete" data-method="delete">Delete Question</a>
+        <a href="/questions_index/<%= question.id %>/" class="btn btn-default" role="button" id="button-delete" data-method="delete">Delete Question</a>
       </div>
     </div>
   </div>
-
-</div>
-
-</div>
-</div>
 <% end %>
+</div>
 

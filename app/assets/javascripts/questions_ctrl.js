@@ -3,7 +3,7 @@
 
  // angular.module("app").controller("questionsCtrl", function($scope, $http, $window){
   angular.module("app").controller('questionsCtrl', ['$scope', '$http', '$window', function($scope, $http, $window){
-   
+
     $scope.setup = function(){
         $http.get('/api/v1/questions.json').then(function(response){
             $scope.questions = response.data;
@@ -43,7 +43,8 @@
       }
     };
 
-   window.scope = $scope;
+
+    window.scope = $scope;
 
  }]);
 
