@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+  layout "admin-application"
   
   def new
     @admin = Admin.new

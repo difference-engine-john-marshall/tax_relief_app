@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaxReliefApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid" id="navbar-container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            <%= image_tag "john-marshall-law-logo.png" %>
+          </a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="/questions">Tax Relief Qualification</a></li>
+          <li><%= link_to "Sign Out", "/admins/sign_out", method: :delete if admin_signed_in? %></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container-fluid" id="navbar-container-footer">
+        <div class="navbar-header" id="footer-text">
+          <p>The Difference Engine &copy 2016</p>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <% flash.each do |name, message| %>
+    <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <%= message %>
+    </div>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>
