@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
 
     if @question.save
       flash[:success] = "New question created"
-      redirect_to '/questions_index'
+      redirect_to '/dashboard/questions'
     else
       flash[:warning] = "Question not saved"
       render :new
@@ -42,7 +42,7 @@ class QuestionsController < ApplicationController
     if @question.update({text: params[:text], yes_response: params[:yes_response], no_response: params[:no_response], prequalifier: params[:prequalifier], id: params[:id]})
     
       flash[:success] = "Question Edited"
-      redirect_to '/questions_index'
+      redirect_to '/dashboard/questions'
     else
       flash[:warning] = "Question not saved"
       render :edit
@@ -54,7 +54,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.destroy
     flash[:success] = "Question deleted"
-    redirect_to '/questions_index'
+    redirect_to '/dashboard/questions'
   end 
 
   def classic

@@ -40,4 +40,8 @@ class FaqsController < ApplicationController
       render :edit
     end
   end
+
+  def faqs_dashboard
+    @faqs = Faq.all
+  end
 end

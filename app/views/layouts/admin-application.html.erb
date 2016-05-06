@@ -34,6 +34,26 @@
     </nav>
   </div>
 
+  <div class="container-fluid">
+
+    <% flash.each do |name, message| %>
+      <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <%= message %>
+      </div>
+    <% end %>
+
+    <div id="navbar-panel">
+      <a href="/dashboard/questions" class="btn btn-default index-button" role="button">Questions</a>
+      <a href="/dashboard/faqs" class="btn btn-default index-button" role="button">FAQs</a>
+      <a href="/dashboard/questions/new" class="btn btn-default index-button" role="button">Create Question</a>
+      <a href="/dashboard/faqs/new" class="btn btn-default index-button" role="button">Create FAQ</a>
+      <a href="/dashboard/admins/new" class="btn btn-default index-button" role="button">Create Admin</a>
+    </div>
+
+    <%= yield %>
+  </div>
+
   <div class="footer">
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container-fluid" id="navbar-container-footer">
@@ -43,15 +63,6 @@
       </div>
     </nav>
   </div>
-
-  <% flash.each do |name, message| %>
-    <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      <%= message %>
-    </div>
-  <% end %>
-
-<%= yield %>
 
 </body>
 </html>

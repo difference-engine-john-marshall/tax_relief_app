@@ -1,29 +1,33 @@
 Rails.application.routes.draw do
 
 
+  get 'dashboards/show'
+
   devise_for :admins
-  get '/admins/new' => 'admins#new'
-  post '/admins/create' => 'admins#create'
+  get '/dashboard/admins/new' => 'admins#new'
+  post '/dashboard/admins/create' => 'admins#create'
 
   root 'questions#home'
 
   get '/' => 'questions#home'
-  get '/questions_index' => 'questions#index'
-  get '/questions_index/new' => 'questions#new'
-  post '/questions_index' => 'questions#create'
+  get '/dashboard' => 'dashboards#show'
+  get '/dashboard/questions' => 'questions#index'
+  get '/dashboard/questions/new' => 'questions#new'
+  post '/dashboard/questions' => 'questions#create'
 
   get '/faq' => 'faqs#index', as: :faqs
-  get '/faq/new' => 'faqs#new'
-  post '/faq' => 'faqs#create'
-  get '/faq/:id/edit' => 'faqs#edit'
-  patch '/faq/:id' => 'faqs#update'
+  get '/dashboard/faqs' => 'faqs#faqs_dashboard'
+  get '/dashboard/faqs/new' => 'faqs#new'
+  post '/dashboard/faqs' => 'faqs#create'
+  get '/dashboard/faq/:id/edit' => 'faqs#edit'
+  patch '/dashboard/faq/:id' => 'faqs#update'
 
   get '/questions/classic' => 'questions#classic'
   get '/questions/equitable' => 'questions#equitable'
   get '/questions' => 'questions#show'
-  get '/questions_index/:id/edit' => 'questions#edit'
-  patch '/questions_index/:id' => 'questions#update'
-  delete '/questions_index/:id' => 'questions#destroy'
+  get '/dashboard/questions/:id/edit' => 'questions#edit'
+  patch '/dashboard/questions/:id' => 'questions#update'
+  delete '/dashboard/questions/:id' => 'questions#destroy'
 
   namespace :api do
     namespace :v1 do

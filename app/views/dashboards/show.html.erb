@@ -15,8 +15,8 @@
           <%= label_tag :no_response %>:
           <%= question.no_response %>
         </div>
-        <a href="/dashboard/questions/<%= question.id %>/edit" class="btn btn-default" id="button-edit" role="button">Edit Question</a>
-        <a href="/dashboard/questions/<%= question.id %>/" class="btn btn-default" role="button" id="button-delete" data-method="delete">Delete Question</a>
+        <a href="/questions_index/<%= question.id %>/edit" class="btn btn-default" id="button-edit" role="button">Edit Question</a>
+        <a href="/questions_index/<%= question.id %>/" class="btn btn-default" role="button" id="button-delete" data-method="delete">Delete Question</a>
       </div>
     </div>
   </div>
