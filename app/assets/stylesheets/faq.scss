@@ -1,3 +1,62 @@
-// Place all the styles related to the faq controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$john-marshall-red: #9A0000;
+$white: #FFF;
+$faq-text-area-width: 93%;
+$faq-text-area-height: 200px;
+$button-border-radius: 10px;
+
+
+.faq-form-top-title {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#faq-form-heading {
+  background-color: $john-marshall-red;
+  
+  .faq-form-title {
+    text-align: center;
+    color: $white;
+    font-size: 22px;
+  }
+
+}
+
+.center {
+  margin: auto;
+  width: $faq-text-area-width;
+  text-align: center;
+
+  .faq-text {
+    width: $faq-text-area-width;
+    height: $faq-text-area-height;
+    border-color: $john-marshall-red;
+    border-radius: $button-border-radius;
+    border-width: 5px;
+    display: block;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+
+  .faq-box-title {
+    font-size: 22px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+}
+
+.faq-form-button-submit {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background-color: $john-marshall-red;
+  color: $white;
+}
+
+
+
+
+
+

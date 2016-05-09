@@ -1,9 +1,19 @@
+<div class="container-fluid">
+  <div class="row faq-form-top-title">
+    <h1>Create A New FAQ</h1>
+  </div>
+</div>
 
 <%= form_tag "/faq", method: :post do %>  
 
   <%= render "faq_form" %>
 
-  <%= submit_tag "Create New FAQ" %>
+  <div class="row">
+    <div class="button-submit">
+      
+      <%= submit_tag "Create FAQ", class: "btn btn-default btn-lg faq-form-button-submit" %>
+    </div>
+  </div>
 
 <% end %>
   
