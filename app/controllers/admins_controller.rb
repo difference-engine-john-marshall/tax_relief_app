@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+  layout "admin-application"
   before_action :authenticate_admin!
   
   def new

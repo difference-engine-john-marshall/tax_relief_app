@@ -42,7 +42,8 @@
 }
 
 #question-text-body {
-  padding-top: 40px;
+  // padding-top: 40px;
+  text-align: left;
 }
 
 #yes-question-field-tag{
@@ -102,16 +103,31 @@
   padding-top: 40px;
 }
 
-#index-button {
-  background-color: #9A0000;
+.textbox-border {
+  margin: 10px;
+  background: #f4e5e5;
+  border: 1px solid #e7eaec;
+  border-radius: 3px;
+  padding: 15px;
+}
+
+.index-button {
+  // background-color: #9A0000;
   font-size: 24px;
-  color: white;
+  // color: white;
   text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  max-width: 73%;
+  max-width: 100%;
+}
+
+#navbar-panel {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 75%;
 }
 
 #new-question-button:hover {
@@ -121,4 +137,13 @@
 #new-question-button:active {
   vertical-align: top;
   padding: 8px 13px 6px;
+}
+
+.ta-editor {
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+    margin:20px 0;
 }
