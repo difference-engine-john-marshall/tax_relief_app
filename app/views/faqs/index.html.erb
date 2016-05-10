@@ -1,27 +1,24 @@
+<div class="container" id="faq-panel">
+
 <% @faqs.each do |q|%>
-
-
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="heading<%=q.id%>">
-        <h4 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=q.id%>" aria-expanded="false" aria-controls="collapse<%=q.id%>" class="collapsed">
-            <%= q.question_text %>
-          </a>
-        </h4>
-      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading<%=q.id%>">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=q.id%>" aria-expanded="false" aria-controls="collapse<%=q.id%>" class="collapsed">
+              <%= q.question_text %>
+            </a>
+          </h4>
+        </div>
+
       <div id="collapse<%=q.id%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%=q.id%>" aria-expanded="false" style="height: 0px;">
         <div class="panel-body">
           <%= q.answer_text %>
         </div>
-
-        <div class="ned-links">
-          <% if admin_signed_in? %>
-            <%= link_to "New", "/faq/new" %>
-            <%= link_to "Edit", "/faq/#{q.id}/edit" %>
-          <% end %>
-        </div>
+      </div>
     </div>
   </div>
 
 <% end %>
+
+</div>
