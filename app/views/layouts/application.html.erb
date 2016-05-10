@@ -27,6 +27,9 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="/">Home</a></li>
             <li><a href="/questions">Tax Relief Qualification</a></li>
+            <% if admin_signed_in? %>
+            <li><%= link_to "Admin Dashboard", "/dashboard" %></li>
+            <% end %>
             <li><%= link_to "Sign Out", "/admins/sign_out", method: :delete if admin_signed_in? %></li>
           </ul>
         </div>
@@ -48,8 +51,10 @@
         <div class="navbar-header" id="footer-text">
           <p>The Difference Engine &copy 2016</p>
         </div>
-        <div class="text-left" id="footer-admin">
-          <p>Admin</p>
+        <div class="navbar-right" id="footer-text">
+          <% unless admin_signed_in? %>
+            <p><%= link_to "Admin Sign In", "/admins/sign_in" %></p>
+            <% end %>
         </div>
       </div>
     </nav>
