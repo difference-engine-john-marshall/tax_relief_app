@@ -4,8 +4,8 @@
     <div ng-repeat="question in questions track by $index">
        <div ng-show="question_index == $index">
           <p ng-bind-html="question.text">{{question.text}}</p>
-          <button ng-click="checkYesResponse(question.yes_response)">Yes</button>
-          <button ng-click="checkNoResponse(question.no_response)">No</button>
+          <a ng-click="checkYesResponse(question.yes_response)" class="btn btn-default">Yes</a>
+          <a ng-click="checkNoResponse(question.no_response)" class="btn btn-default">No</a>
        </div>
     </div>
 
