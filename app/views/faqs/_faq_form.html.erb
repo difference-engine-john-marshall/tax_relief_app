@@ -1,28 +1,15 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="faq-form">
-      <div class="panel panel-default faq-form-panel">
-        <div class="panel-heading" id="faq-form-heading">
-          <h3 class="panel-title faq-form-title">New FAQ</h3>
-        </div>
+<div class="panel-body center">
+  <div class="faq-box-title">
+    <%= label_tag :question_text %>
+    <%= tinymce %>
+    <%= text_area_tag :question_text, @faq.question_text, :class=> "tinymce" %>
+  </div>
 
-        <div class="panel-body center">
-          <div class="faq-box-title">
-            <%= label_tag :question_text %>
-          </div>
-          <div>
-            <%= text_area_tag :question_text, @faq.question_text, class: "faq-text", placeholder: "FAQ Question Text" %>
-          </div>
-          <div class="faq-box-title">
-              <%= label_tag :answer_text %>
-          </div>
-          <div>
-              <%= text_area_tag :answer_text, @faq.answer_text, class: "faq-text", placeholder: "FAQ Answer Text" %>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="faq-box-title">
+    <%= label_tag :answer_text %>
+    <%= text_area_tag :answer_text, @faq.answer_text, :class=> "tinymce" %>
   </div>
 </div>
 
+      
     
