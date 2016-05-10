@@ -6,10 +6,14 @@
         <div class="panel-heading" id="question-text-panel-heading">
           <h3 class="panel-title">New Question Text</h3>
         </div>
+        
+
         <div class="panel-body" id="question-text-body">
             <% label_tag :text %>
-            <%= text_area_tag :text, @question.text, :id=> "question-text-field-tag"  %>
+            <%= tinymce %>
+            <%= text_area_tag :text, @question.text, :class => "tinymce", id: "question-text-field-tag" %>
         </div>
+
         <div class="question-response-field">
           <%= label_tag :yes_response %>
           <%= text_field_tag :yes_response, @question.yes_response , id: "yes-question-field-tag" %> &nbsp;
@@ -22,7 +26,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="button-submit">
-      <button type="submit" class="btn btn-default btn-lg" id="button-submit"><% submit_tag %>Add new quesiton</button>
+      <%= submit_tag "Add New Question", class: "btn btn-default btn-lg", id: "button-submit" %>
     </div>
   </div>
 </div>

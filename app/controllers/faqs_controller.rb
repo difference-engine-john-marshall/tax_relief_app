@@ -1,4 +1,7 @@
 class FaqsController < ApplicationController
+  layout "admin-application", except: :index
+  before_action :authenticate_admin!, except: :index
+
   def index
     @faqs = Faq.all
   end
@@ -15,7 +18,7 @@ class FaqsController < ApplicationController
 
     if @faq.save
       flash[:success] = "FAQ created!"
-      redirect_to '/faq'
+      redirect_to '/dashboard/faqs'
     else
       flash[:warning] = "FAQ was not created!"
       render :new
@@ -34,12 +37,19 @@ class FaqsController < ApplicationController
       answer_text: params[:answer_text]
       })
       flash[:success] = "FAQ updated!"
-      redirect_to faqs_path
+      redirect_to "/dashboard/faqs"
     else
       flash[:warning] = "FAQ not updated. Please try again."
       render :edit
     end
   end
+
+  def destroy
+    @faq = Faq.find(params[:id])
+    @faq.destroy
+    flash[:success] = "FAQ deleted"
+    redirect_to '/dashboard/faqs'
+  end 
 
   def faqs_dashboard
     @faqs = Faq.all

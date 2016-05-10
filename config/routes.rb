@@ -19,8 +19,9 @@ Rails.application.routes.draw do
   get '/dashboard/faqs' => 'faqs#faqs_dashboard'
   get '/dashboard/faqs/new' => 'faqs#new'
   post '/dashboard/faqs' => 'faqs#create'
-  get '/dashboard/faq/:id/edit' => 'faqs#edit'
-  patch '/dashboard/faq/:id' => 'faqs#update'
+  get '/dashboard/faqs/:id/edit' => 'faqs#edit'
+  patch '/dashboard/faqs/:id' => 'faqs#update'
+  delete '/dashboard/faqs/:id' => 'faqs#destroy'
 
   get '/questions/classic' => 'questions#classic'
   get '/questions/equitable' => 'questions#equitable'
