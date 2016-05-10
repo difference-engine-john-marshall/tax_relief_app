@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_admin!, only: [:index, :new, :create, :edit, :update, :destroy]
 
-  layout "admin-application", except: [:show, :home]
+  layout "admin-application", except: [:show, :home, :classic, :equitable]
 
   def home
 
