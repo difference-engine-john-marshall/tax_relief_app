@@ -1,6 +1,6 @@
 # John Marshall Law Innocent Spouse Tax Relief App
 
-# Feature list:
+# Dependency list:
 * Ruby Version 2.2.3
 * Rails Version 4.2.5
 * PostgreSQL 0.15
@@ -8,27 +8,34 @@
 * Factory Girls 4.6
 
 # Database
-Create Database
+In the terminal after navigating to the application folder, you can create the database with
 ```terminal
 rake db:create
 ```
-Migrate Database
+To migrate the fields of the database run
 ```terminal
 rake db:migrate
 ```
-Seed Database
+To seed the database with data run
 ```terminal
 rake db:seed
 ```
 
-# TestSuite
-To Run Tests
+#To Start The Application
+Inside the application folder in the terminal run
 ```terminal
-rspec
+rails s
+```
+to start the server. Go to localhost:3000 in your browser to see the application.
+
+# Test Suite
+To run tests, in the terminal run
+```terminal
+bundle exec rspec
 ```
 
 # Install Features
-To configure gems
+To configure gems, in the terminal run
 ```terminal
 bundle
 ```
