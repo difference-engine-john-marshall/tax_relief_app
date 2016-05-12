@@ -133,11 +133,14 @@ body {
   font: Helvetica;
   font-size: 18px;
   color: white;
+  margin-top: 12px;
 } 
 
-#footer-text p {
-  margin-top: 12px;
-}
+#footer-text a {
+  color: white;
+  text-decoration: none
+} 
+
 
 //---------------USER_SIGN_IN----------------
 //---------------------------------------------

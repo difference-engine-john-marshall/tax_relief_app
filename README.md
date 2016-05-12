@@ -5,7 +5,8 @@
 * Rails Version 4.2.5
 * PostgreSQL 0.15
 * RSpec 3.4.2
-* Factory Girls 4.6
+* FactoryGirls 4.6
+* AngularJS
 
 # Database
 In the terminal after navigating to the application folder, you can create the database with
