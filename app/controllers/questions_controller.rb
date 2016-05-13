@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.all
+    @questions = Question.all.order(:id)
     #admin user only
   end
 
