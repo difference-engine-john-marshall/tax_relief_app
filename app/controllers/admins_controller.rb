@@ -17,7 +17,7 @@ class AdminsController < ApplicationController
       email = params[:email]
       AdminNewMailer.admin_new(email).deliver_now
       flash[:success] = "Message sent"
-      redirect_to root_path
+      redirect_to '/dashboard'
     else
       render :new
     end
