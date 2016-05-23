@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/dashboard/admins/new' => 'admins#new'
   post '/dashboard/admins/create' => 'admins#create'
   get '/dashboard/admins/edit' => 'admins#edit'
-  delete '/dashboard/admins/delete' => 'admins#destroy'
+  delete '/dashboard/admins/:id' => 'admins#destroy'
 
   root 'questions#home'
 

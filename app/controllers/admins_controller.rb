@@ -26,4 +26,12 @@ class AdminsController < ApplicationController
   def edit
     @admins = Admin.all
   end
+
+  def destroy
+    @admin = Admin.find(params[:id])
+    @admin.destroy  
+
+    flash[:success] = "Admin removed"
+    redirect_to '/dashboard'
+  end
 end

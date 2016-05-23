@@ -1,25 +1,35 @@
 
-<%= form_tag '/dashboard/admins/edit', method: :delete do %>
 <div class="container-fluid">
-  <div class="row" id="new-title">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="question-text">
-      <div class="panel panel-default" id="question-text-panel">
-        <div class="panel-heading" id="question-text-panel-heading">
-          <h3 class="panel-title">Delete Admin</h3>
-        </div>
-        <%= form_tag '/dashboard/admins/edit' do %>
-          <br>
-          <%= text_field_tag :email, nil, placeholder: 'Enter email address...' %>
-          <br>
-          <br>
+  <div class="admin-warning">
+    <p>This will remove admin permissions for the user and is not reversable.</p>
+  </div>
+  <% @admins.each do |admin| %>
+  <table class="admins-table">
+    <tr>
+      <th>User</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td><%= admin.id %></td>
+      <td><%= admin.email %></td>
+      <td><%= link_to "Delete Admin", "#{admin.id}", class: "button-submit btn-lg", id: "button-submit", method: :delete %></td>
+    </tr>
+    <br>
+  </table>
+  <% end %>
+</div>
 
-        <% end %>
+<% @admins.each do |admin| %>
+
+  <div class="row" id="new-title">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="admin-text">
+      <div class="panel panel-default" id="question-text-panel">
+        <div class="panel-body textbox-border" id="question-text-body">       
+            <%= raw admin.email %>
+        </div>
+        <a href="/dashboard/questions/<%= admin.id %>/" class="btn btn-default" role="button" id="button-delete" data-method="delete">Delete Question</a>
       </div>
     </div>
   </div>
 <% end %>
-This will remove admin permissions for the user and is not reversable.
-<% @admins.each do |admin| %>
-<p><%= admin.id %>  <%= admin.email %> <%= submit_tag "Delete Admin", class: "button-submit btn-lg", id: "button-submit" %> </p>
-<% end %>
-
