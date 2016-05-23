@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   devise_for :admins
   get '/dashboard/admins/new' => 'admins#new'
   post '/dashboard/admins/create' => 'admins#create'
+  get '/dashboard/admins/edit' => 'admins#edit'
+  delete '/dashboard/admins/delete' => 'admins#destroy'
 
   root 'questions#home'
 

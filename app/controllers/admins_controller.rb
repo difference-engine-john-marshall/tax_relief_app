@@ -22,4 +22,8 @@ class AdminsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @admins = Admin.all
+  end
 end
