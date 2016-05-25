@@ -1,17 +1,9 @@
 class AdminsController < ApplicationController
   layout "admin-application"
+  # before_action :authenticate_admin!
   before_action :authenticate_superadmin!
-
-    def authenticate_superadmin!
-      current = Admin.where(email: current_admin.email)
-      p "*********************"
-      p current
-      p "*********************"
-
-
-       
-    end
   
+
   def new
     @admin = Admin.new
   end
@@ -45,3 +37,12 @@ class AdminsController < ApplicationController
     redirect_to '/dashboard'
   end
 end
+
+private
+
+  def authenticate_superadmin!
+      current = Admin.find_by(id: current_admin.id)
+      unless current_admin.superadmin
+        redirect_to "/dashboard"
+      end
+  end
