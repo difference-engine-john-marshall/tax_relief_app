@@ -49,8 +49,10 @@
       <a href="/dashboard/faqs" class="btn btn-default index-button" role="button">FAQs</a>
       <a href="/dashboard/questions/new" class="btn btn-default index-button" role="button">Create Question</a>
       <a href="/dashboard/faqs/new" class="btn btn-default index-button" role="button">Create FAQ</a>
-      <a href="/dashboard/admins/new" class="btn btn-default index-button" role="button">Create Admin</a>
-      <a href="/dashboard/admins/edit" class="btn btn-default index-button" role="button">Delete Admin</a>
+      <% if Admin.find_by(id: current_admin.id).superadmin %>
+        <a href="/dashboard/admins/new" class="btn btn-default index-button" role="button">Create Admin</a>
+        <a href="/dashboard/admins/edit" class="btn btn-default index-button" role="button">Delete Admin</a>
+      <% end %>
 
     </div>
 

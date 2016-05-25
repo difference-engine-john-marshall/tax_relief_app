@@ -41,8 +41,7 @@ end
 private
 
   def authenticate_superadmin!
-      current = Admin.find_by(id: current_admin.id)
-      unless current_admin.superadmin
+      unless Admin.find_by(id: current_admin.id).superadmin
         redirect_to "/dashboard"
       end
   end
