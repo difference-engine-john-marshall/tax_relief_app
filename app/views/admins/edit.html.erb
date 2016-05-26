@@ -9,8 +9,8 @@
           <table style="width:80%" class="admin-table">
             <% @admins.each do |admin| %>
             <tr>
-              <td><%= admin.email %></td>
-              <td><%= link_to "Delete Admin", "#{admin.id}", class: "button-submit btn-lg", id: "button-submit", data: {confirm: "Deleting an admin account is not reversable.  Are you sure you want to delete #{admin.email}?"}, method: :delete %></td>
+              <td id="email"><%= admin.email %></td>
+              <td id="button"><%= link_to "Delete Admin", "#{admin.id}", class: "button-submit btn-lg", id: "button-submit", data: {confirm: "Deleting an admin account is not reversable.  Are you sure you want to delete #{admin.email}?"}, method: :delete %></td>
             </tr>
             <% end %>
           </table>
