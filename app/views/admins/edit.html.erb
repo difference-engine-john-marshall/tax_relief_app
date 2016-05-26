@@ -1,35 +1,21 @@
-
 <div class="container-fluid">
-  <div class="admin-warning">
-    <p>This will remove admin permissions for the user and is not reversable.</p>
-  </div>
-  <% @admins.each do |admin| %>
-  <table class="admins-table">
-    <tr>
-      <th>User</th>
-      <th>Email</th>
-      <th></th>
-    </tr>
-    <tr>
-      <td><%= admin.id %></td>
-      <td><%= admin.email %></td>
-      <td><%= link_to "Delete Admin", "#{admin.id}", class: "button-submit btn-lg", id: "button-submit", method: :delete %></td>
-    </tr>
-    <br>
-  </table>
-  <% end %>
-</div>
-
-<% @admins.each do |admin| %>
-
   <div class="row" id="new-title">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="admin-text">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="question-text">
       <div class="panel panel-default" id="question-text-panel">
-        <div class="panel-body textbox-border" id="question-text-body">       
-            <%= raw admin.email %>
+        <div class="panel-heading" id="question-text-panel-heading">
+          <h3 class="panel-title">Warning: deleting an admin account is not reversable!</h3>
         </div>
-        <a href="/dashboard/questions/<%= admin.id %>/" class="btn btn-default" role="button" id="button-delete" data-method="delete">Delete Question</a>
+        <div class="panel-body">       
+          <table style="width:80%" class="admin-table">
+            <% @admins.each do |admin| %>
+            <tr>
+              <td id="email"><%= admin.email %></td>
+              <td id="button"><%= link_to "Delete Admin", "#{admin.id}", class: "button-submit btn-lg", id: "button-submit", data: {confirm: "Deleting an admin account is not reversable.  Are you sure you want to delete #{admin.email}?"}, method: :delete %></td>
+            </tr>
+            <% end %>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-<% end %>
+</div>
