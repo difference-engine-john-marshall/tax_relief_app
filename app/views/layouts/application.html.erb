@@ -52,7 +52,7 @@
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container-fluid" id="navbar-container-footer">
         <div class="navbar-header" id="footer-text">
-          <p>The Difference Engine &copy 2016</p>
+          <p><a href="http://thedifferenceengine.io/">The Difference Engine &copy 2016</a></p>
         </div>
         <div class="navbar-right" id="footer-text">
           <% unless admin_signed_in? %>
@@ -61,14 +61,7 @@
         </div>
       </div>
     </nav>
-  </div>
-
-  <% flash.each do |name, message| %>
-    <div class="alert alert-<%= name %> alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      <%= message %>
-    </div>
-  <% end %>
+  </div> 
 
 </body>
 </html>

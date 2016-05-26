@@ -1,7 +1,9 @@
 class AdminsController < ApplicationController
   layout "admin-application"
-  before_action :authenticate_admin!
+  # before_action :authenticate_admin!
+  before_action :authenticate_superadmin!
   
+
   def new
     @admin = Admin.new
   end
@@ -22,4 +24,24 @@ class AdminsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @admins = Admin.all
+  end
+
+  def destroy
+    @admin = Admin.find(params[:id])
+    @admin.destroy  
+
+    flash[:success] = "Admin removed"
+    redirect_to '/dashboard'
+  end
 end
+
+private
+
+  def authenticate_superadmin!
+      unless Admin.find_by(id: current_admin.id).superadmin
+        redirect_to "/dashboard"
+      end
+  end
