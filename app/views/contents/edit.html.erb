@@ -1,0 +1,27 @@
+<%= form_tag "/dashboard/contents/#{@content.id}", method: :patch do %>
+<div class="container-fluid">
+  <div class="row" id="new-title">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="question-text">
+      <div class="panel panel-default" id="question-text-panel">
+        <div class="panel-heading" id="question-text-panel-heading">
+          <h3 class="panel-title">Edit <%= @content.content_type.capitalize %> Text</h3>
+        </div>
+        <div class="panel-body" id="question-text-body">
+            <% label_tag :text %>
+            <%= tinymce %>
+            <%= text_area_tag :text, @content.text, :class => "tinymce", id: "question-text-field-tag" %>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="button-submit">
+      <button type="submit" class="btn btn-default btn-lg" id="button-submit"><% submit_tag %>Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<% end %>

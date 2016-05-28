@@ -32,6 +32,11 @@ Rails.application.routes.draw do
   patch '/dashboard/questions/:id' => 'questions#update'
   delete '/dashboard/questions/:id' => 'questions#destroy'
 
+  
+  get '/dashboard/contents' => 'contents#index'
+  get '/dashboard/contents/:id/edit' => 'contents#edit'
+  patch '/dashboard/contents/:id' => 'contents#update'
+
   namespace :api do
     namespace :v1 do
       get '/questions' => 'questions#index'
