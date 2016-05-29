@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :content do
-    text "MyText"
-    equitable false
-    classic false
+    id 1
+    text "original text"
+    content_type "classic"
   end
 end
