@@ -21,7 +21,7 @@ class AdminsController < ApplicationController
       flash[:success] = "Message sent"
       redirect_to '/dashboard'
     else
-      render :new
+      redirect_to '/dashboard/admins/new'
     end
   end
 

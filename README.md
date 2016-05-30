@@ -42,7 +42,13 @@ An admin at the dashboard '/dashboard' can ...
 * view all faq questions and answers at '/dashboard/faqs'. They can also edit and delete faqs from here.
 * create new questions at '/dashboard/questions/new'
 * create new faqs at '/dashboard/faqs/new'
+* view classic and equitable success pages text content at '/dashboard/contents'. They can also edit that text content from here.
+
+###Super Admin###
+
+An admin with the superadmin attribute can ...
 * create new admins at '/dashboard/admins/new'
+* delete admins at '/dashboard/admins/edit'
 
 # Install Features #
 After cloning this repo in your terminal, run
