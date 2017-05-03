@@ -41,6 +41,10 @@
   margin-right: auto;
   border-radius: 10px;
   min-width: 80%;
+  position:fixed;
+  left:10%;
+  right:10%;
+  z-index:1000;
 }
 
 #large-button:hover {
